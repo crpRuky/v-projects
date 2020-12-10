@@ -14,10 +14,10 @@ export default {
       todos: ['Зарядка', 'Завтрак']
     }
   },
-  components: {      
+  components: {
     TodoList
   },
-  methods: {                                     
+  methods: {
     deleteTodo(index){
       this.todos.splice(index, 1);
     }
