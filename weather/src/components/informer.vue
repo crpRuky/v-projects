@@ -4,20 +4,20 @@
 
       <div class="temperature">
         <img src="../assets/thermometer.png">
-        <div class="temp-real">1</div>
-        <div class="temp-feel">-3.8</div>
+        <div class="temp-real">{{real_temp}}</div>
+        <div class="temp-feel">{{feel_temp}}</div>
       </div>
 
       <div class="flex-break"></div>
 
       <div class="humidity">
-        <img src="../assets/humidity.png"> 12 <small>%</small>
+        <img src="../assets/humidity.png"> {{humidity}} <small>%</small>
       </div>
 
       <div class="vertical-divider"></div>
 
       <div class="wind">
-        <img src="../assets/wind.png"> 12 <small>м/с</small>
+        <img src="../assets/wind.png"> {{wind}} <small>м/с</small>
       </div>
 
     </div>
@@ -27,10 +27,16 @@
 <script>
 export default {
   name: 'informer',
-  props: {
-    
+  data(){
+    return {
+      real_temp:1,
+      feel_temp:-3.8,
+      humidity:12,
+      wind:12
+    }
   }
 }
+
 </script>
 
 <style>

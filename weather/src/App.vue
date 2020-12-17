@@ -10,7 +10,7 @@ import informer from './components/informer.vue'
 
 export default{
   components: { informer },
-  name: 'FirstComponent',
+  name: 'MainApp',
   data(){
     return {text: 'Я новый компонент!'}
   }
