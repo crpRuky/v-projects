@@ -1,6 +1,6 @@
 <template>
   <div class="user-card">
-        <img src="../assets/70.jpg" class="user-photo">
+        <img v-bind:src="image" class="user-photo">
         <p class="user-nickname">{{nickname}}</p>
         <p class="user-name">
             {{second_name}} {{first_name}}<br>
@@ -27,6 +27,7 @@ export default {
   name: 'UserCard',
   props: {
     nickname: String,
+    image: String,
     first_name: String,
     second_name: String,
     last_name: String,
