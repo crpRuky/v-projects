@@ -22,17 +22,27 @@ h2 {
   margin-bottom:0px;
 }
 p {
-  margin-top:0px;
+  margin-top:5px;
   margin-bottom:10px;
-  font-size:24px;
+  font-size:20px;
 }
 .info p {
   font-size:18px;
 }
 
 .main {
+  position:relative;
   padding:15px 0px 10px 0px;
-  margin-top:20px;
-  background-color:rgba(185, 185, 255, 0.25);
+  box-shadow: inset 0px 2px 0px 0px #5a5a5a,
+              0px -15px 20px -15px #a3a3a3;
+  background-color:white;
+  top:40px;
+  margin-top:-40px;
+  transition-duration:0.2s;
+  transition-property:margin-top, top;
+}
+.main:hover {
+  top:0px;
+  margin-top:0px;
 }
 </style>

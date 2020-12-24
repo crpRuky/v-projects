@@ -2,7 +2,7 @@
   <div id="app">
    <h2>Меню:</h2>
    <pizza v-bind:pizzaName='"Пицца от школы программистов"' v-bind:pizzaPrice='599'>
-     <p>На самом деле не 599, а 600, но никто ведь не заметит отсутствие одного рубля со сдачи, верно?</p>
+     <p>На самом деле не 599, а 600, но никто ведь не заметит отсутствие одного рубля, верно?</p>
    </pizza>
    <pizza v-bind:pizzaName='"Пицца от 6Б"' v-bind:pizzaPrice='12'>
      <p>Потому и 12 рублей</p>
@@ -37,5 +37,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  margin:0px;
 }
 </style>
