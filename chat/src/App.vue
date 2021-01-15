@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <container>
-      <chat-window>
-        <chat-message v-for="message in messages" v-bind:key="message" :username="message.author" :datetime="message.datetime">{{message.text}}</chat-message>
+      <chat-window v-on:sendData="sendMessage($event)">
+        <chat-message v-for="(message, i) in messages" v-bind:key="i" :username="message.author" :datetime="message.datetime">{{message.text}}</chat-message>
       </chat-window>
     </container>
   </div>
@@ -30,8 +30,22 @@ export default {
       this.axios.get('http://37.77.104.246/api/chat/getmessages.php')
       .then((response) => {
         this.messages = response.data;
-        console.log(this.messages)
       })
+    },
+    sendMessage(data){
+      let postBody = {
+        author:data.author,
+        text:data.text
+      }
+      let str = JSON.stringify(postBody);
+      this.axios.post('http://37.77.104.246/api/chat/sendmessage.php', str)
+      .then((response) => {
+        console.log(response);
+        this.getMessages();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     }
   },
   mounted(){

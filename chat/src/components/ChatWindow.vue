@@ -6,9 +6,9 @@
       </div>
     </div>
     <div class="chat-send-panel">
-      <input type="text" placeholder="Ваш никнейм..." class="chat-send-name-field" />
-      <input type="text" placeholder="Сообщение..." class="chat-send-message-field"/>
-      <button>
+      <input v-model="name" type="text" placeholder="Ваш никнейм..." class="chat-send-name-field" />
+      <input v-model="text" type="text" placeholder="Сообщение..." class="chat-send-message-field"/>
+      <button v-on:click="$emit('sendData', {author:name, text:text})">
         <img src="/img/send.png" />
       </button>
     </div>
@@ -21,6 +21,12 @@ export default {
   props: {
       username: String,
       datetime: String
+  },
+  data(){
+    return {
+      name:'',
+      text:''
+    }
   }
 }
 </script>
